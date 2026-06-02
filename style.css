@@ -1,0 +1,13 @@
+body {
+    background-color: rgb(67,67,67);
+    font-family: "Courier New", Courier, monospace;
+    color: white;
+}
+
+a {
+    color: lightblue
+}
+
+a:visited {
+    color: orange;
+}
