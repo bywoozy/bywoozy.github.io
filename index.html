@@ -1,1 +1,25 @@
-hello world
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>this is... bywoozy</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    yo <br>
+    i'm woozy <br>
+    i make stuff from time to time (i don't share most of it though)<br>
+    i promise(d) to make this site better about <span id="days">0</span> days ago... gee i need to lock in
+    <br>
+    <br>
+
+
+    <script>
+        const startDate = new Date('2026-05-31');
+        const currentDate = new Date();
+        const differenceTime = Math.abs(currentDate - startDate);
+        const differenceDays = Math.floor(differenceTime / (1000 * 60 * 60 * 24));
+        document.getElementById('days').innerText = differenceDays;
+    </script>
+</html>
