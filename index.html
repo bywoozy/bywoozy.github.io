@@ -3,28 +3,62 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>this is... bywoozy</title>
+    <title>this site is... bywoozy</title>
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    yo <br>
-    i'm woozy <br>
-    i build stuff from time to time<br>
-    i like to write, my english teacher made me fall in love with writing essays ironically<br>
-    i promise(d) to make this site better about <span id="days">0</span> days ago
-    <br>
-    <br>
-    github: <a href="https://github.com/bywoozy">@bywoozy</a> <br>
-    discord: <a href="https://discord.com/users/1487933260703994016">@bywoozy</a>
-    <br>
-    <br>
-    projects: <br>
-    <i>though barren now, this ground shall yet bear fruit</i>
+    <div>
+        yo <br>
+        i'm woozy <br>
+        i build stuff from time to time<br>
+        i like to write, my english teacher made me fall in love with writing essays ironically<br>
+        i promise(d) to make this site better about <span id="days">0</span> days ago
+        <br>
+        <br>
+        github: <a href="https://github.com/bywoozy">@bywoozy</a> <br>
+        discord: <a href="https://discord.com/users/1487933260703994016">@bywoozy</a>
+        <br>
+        <br>
+        projects: <br>
+        <i>though barren now, this ground shall yet bear fruit</i>
+    </div>
+
     <script>
         const startDate = new Date('2026-05-31');
         const currentDate = new Date();
         const differenceTime = Math.abs(currentDate - startDate);
         const differenceDays = Math.floor(differenceTime / (1000 * 60 * 60 * 24));
         document.getElementById('days').innerText = differenceDays;
+
+        //easter egg stuff
+        const konamii = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a', 'Enter'];
+        let kIndex = 0;
+        const microwaveAudio = new Audio('microwave.mp3');
+        microwaveAudio.loop = true;
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === konamii[kIndex]) {
+                kIndex++;
+                if (kIndex === konamii.length) {
+                    microwave();
+                    kIndex = 0;
+                }
+            } else {
+                //if they messed up
+                kIndex = 0;
+            }
+        });
+
+        function microwave() {
+            const container = document.getElementById('site-container');
+            container.classList.add('spin-cycle');
+            microwaveAudio.play();
+            setTimeout(() => {
+                container.classList.remove('spin-cycle');
+                microwaveAudio.pause();
+                microwaveAudio.currentTime = 0;
+            }, 7000);
+        }
     </script>
+</body>
 </html>

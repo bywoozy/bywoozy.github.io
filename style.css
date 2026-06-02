@@ -12,3 +12,7 @@ a {
 a:visited {
     color: orange;
 }
+
+.spin-cycle {
+    transform: rotate(360deg);
+}
