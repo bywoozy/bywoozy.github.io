@@ -4,6 +4,13 @@ body {
     color: white;
     font-size: 20px;
 }
+#site-container {
+    background-color: rgb(67,67,67);
+    padding: 20px;
+    min-heignt: 100vh;
+    box-sizing: border-box;
+    transition: transform 7s linear;
+}
 
 a {
     color: lightblue

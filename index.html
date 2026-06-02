@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div>
+    <div id = "site-container">
         yo <br>
         i'm woozy <br>
         i build stuff from time to time<br>
@@ -35,8 +35,10 @@
         let kIndex = 0;
         const microwaveAudio = new Audio('microwave.mp3');
         microwaveAudio.loop = true;
-
+        const endAudio = new Audio('end.mp3');
+        let hasRan = false;
         document.addEventListener('keydown', (e) => {
+            if (hasRan) return;
             if (e.key === konamii[kIndex]) {
                 kIndex++;
                 if (kIndex === konamii.length) {
@@ -50,14 +52,21 @@
         });
 
         function microwave() {
+            hasRan = true;
             const container = document.getElementById('site-container');
-            container.classList.add('spin-cycle');
             microwaveAudio.play();
             setTimeout(() => {
+                container.classList.add('spin-cycle');
+            }, 400);
+            setTimeout(() => {
+                container.style.transition = 'none';
                 container.classList.remove('spin-cycle');
+                void container.offsetHeight;
+                container.style.transition = 'transform 7s linear';
                 microwaveAudio.pause();
                 microwaveAudio.currentTime = 0;
-            }, 7000);
+                endAudio.play();
+            }, 7400);
         }
     </script>
 </body>
