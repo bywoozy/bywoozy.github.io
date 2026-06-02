@@ -54,6 +54,10 @@
         function microwave() {
             hasRan = true;
             const container = document.getElementById('site-container');
+            const clue = document.querySelector('.clue');
+            if (clue) {
+                clue.style.display = 'none';
+            }
             microwaveAudio.play();
             setTimeout(() => {
                 container.classList.add('spin-cycle');
@@ -69,5 +73,6 @@
             }, 7400);
         }
     </script>
+    <div class="clue">🡹🡹🡻🡻🡸🡺🡸🡺 B A ↩</div>
 </body>
 </html>
