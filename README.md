@@ -1,2 +1,3 @@
 # site
-not my best work (i hope it was obvious)
+not my best work...
+hidden easter egg included
